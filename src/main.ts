@@ -4,7 +4,7 @@ import WhiskysList from './whiskysList';
 import { Whisky, Review, MapPosition } from './whiskyClasses';
 import { DataSet, ChartType, Chart } from './chartClasses';
 
-const scotchFile = '/dist/scotchfile.csv';
+const scotchFile = './dist/scotchfile.csv';
 let Whiskys: Array<Whisky> = new Array<Whisky>();
 let Regions: Array<string> = new Array<string>();
 let chart:Chart = null;
