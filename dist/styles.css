@@ -19,7 +19,7 @@ body {
 
 canvas.map {
     border: 1px solid #ccc;
-    background: url('/dist/mapbackground.png') no-repeat;
+    background: url('./dist/mapbackground.png') no-repeat;
     background-size: cover;
 }
 
