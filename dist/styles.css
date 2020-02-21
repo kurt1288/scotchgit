@@ -1,0 +1,167 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+	display: grid;
+    grid-template-columns: 250px min-content auto;
+    grid-gap: 1rem;
+    background-color: #f7f7f7;
+    font-family: 'Barlow', sans-serif;
+}
+
+#chartContainer {
+    width: 50vw;
+    position: relative;
+    margin-top: 3rem;
+}
+
+canvas.map {
+    border: 1px solid #ccc;
+    background: url('/dist/mapbackground.png') no-repeat;
+    background-size: cover;
+}
+
+#controls, #scotchInfoContainer {
+    padding: 1rem;
+}
+
+#controls {
+	border-right: 1px solid #ccc;
+	box-shadow: 3px 0px 10px -6px #848484;
+	background-color: white;
+}
+
+#chartSwapButton {
+	padding: 0.6rem;
+	width: 100%;
+	background-color: #3498db;
+	border: none;
+	color: white;
+	border-radius: 1.1rem;
+	box-shadow: 0 2px 3px -2px #868686;
+	cursor: pointer;
+}
+
+#chartSwapButton:hover {
+    background-color: #1d8fdb;
+}
+
+.filterSection {
+	padding: 1.5rem 0;
+	border-bottom: 1px solid #a4a4a4;
+}
+
+.filterSection p {
+    margin: 0;
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+}
+
+input {
+    box-sizing: border-box;
+}
+
+.inputGroup {
+    display: inline-block;
+    width: 49%;
+    font-size: 0.9rem;
+}
+
+input[type="number"] {
+    padding: 0.4rem;
+    width: 100%;
+}
+
+input[type="checkbox"] {
+    margin-right: 0.3rem;
+}
+
+.checkbox-container {
+	margin: 1rem 0;
+}
+
+.regionFilters {
+    position: absolute;
+    left: -9999px;
+}
+
+.regionFilters + label {
+    opacity: 0.5;
+    cursor: pointer;
+	padding: 1rem;
+	position: relative;
+}
+
+.regionFilters:checked + label {
+    opacity: 1;
+}
+
+.regionFilters + label::before {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 0.8rem;
+	height: 0.8rem;
+	border-radius: 1rem;
+	top: 1.3rem;
+}
+
+#regionMap path {
+    fill: lightgreen;
+}
+
+#regionMap path:hover, #regionMap path.hovered {
+    fill: lightblue;
+}
+
+#regionMouseoverName {
+	text-align: center;
+	margin: 0;
+}
+
+#scotchInfoName {
+	font-size: 2rem;
+	font-weight: normal;
+	margin-bottom: 0.5rem;
+}
+
+#scotchInfoRating, #scotchInfoPrice {
+	display: inline-block;
+	width: 49%;
+}
+
+#scotchInfo div > div {
+	font-size: 1.6rem;
+}
+
+#scotchInfoWordCloud {
+	max-width: 100%;
+	max-height: 40vh;
+	display: block;
+	margin-top: 1rem;
+}
+
+/* Checkbox styling for regions */
+.regionFilters#Speyside + label::before {
+	background-color: #434348;
+}
+.regionFilters#Highland + label::before {
+	background-color: #7cb5ec;
+}
+.regionFilters#Lowland + label::before {
+	background-color: #f15c80;
+}
+.regionFilters#Other + label::before {
+	background-color: #8085e9;
+}
+.regionFilters#Island + label::before {
+	background-color: #90ed7d;
+}
+.regionFilters#Campbeltown + label::before {
+	background-color: #e4d354;
+}
+.regionFilters#Islay + label::before {
+	background-color: #f7a35c;
+}

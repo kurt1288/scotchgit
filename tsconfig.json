@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "esModuleInterop": true,
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "removeComments": true,
+        "sourceMap": true,
+        "outDir": "./dist",
+        "allowJs": true
+    },
+    "include": [
+        "./src/*"
+    ]
+}
