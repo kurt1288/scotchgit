@@ -3,40 +3,55 @@ html, body {
     width: 100%;
 }
 
-body {
-	display: grid;
-    grid-template-columns: min-content auto;
-    grid-gap: 1rem;
-    background-color: #f7f7f7;
-    font-family: 'Barlow', sans-serif;
-}
-
-#hamburger {
-	position: absolute;
-	top: 1rem;
-	left: 1rem;
-	z-index: 9999;
-}
-
-#menuShown {
-	display: block;
-	position: absolute;
-	opacity: 0;
-	cursor: pointer;
-	width: 100%;
+#container {
+	background-color: #f7f7f7;
+	font-family: 'Barlow', sans-serif;
 	height: 100%;
 }
 
-.menuStripe {
-	width: 20px;
-	height: 3px;
-	background-color: #444;
-	margin-bottom: 4px;
-	border-radius: 1px;
+#content {
+	position: relative;
+	transition: 0.2s;
+	display: grid;
+    grid-template-columns: min-content auto;
+	grid-gap: 1rem;
+	width: max-content;
+	height: 100%;
+}
+
+#menuToggle {
+	cursor: pointer;
+	font-size: 1.3rem;
+	position: absolute;
+	top: 0.8rem;
+	left: 1rem;
+	z-index: 9999;
+	transition: 0.2s;
+}
+
+#sideBar {
+	border-right: 1px solid #ccc;
+	box-shadow: 3px 0px 10px -6px #848484;
+	background-color: white;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: -250px;
+	transition: 0.2s;
+	width: 250px;
+	height: 100%;
+}
+
+#menuShown {
+	display: none;
+}
+
+#menuShown:checked + #container #menuToggle, #menuShown:checked + #container #sideBar, #menuShown:checked + #container #content {
+	transform: translateX(250px);
 }
 
 #chartContainer {
-	width: 50vw;
+	width: 90vh;
 	position: relative;
 	margin-top: 3rem;
 	margin-left: 4rem;
@@ -48,33 +63,8 @@ canvas.map {
     background-size: cover;
 }
 
-#controls > div, #scotchInfoContainer {
+#sideBar > div, #scotchInfoContainer {
     padding: 1rem;
-}
-
-#controls {
-	border-right: 1px solid #ccc;
-	box-shadow: 3px 0px 10px -6px #848484;
-	background-color: white;
-	height: 100%;
-	transform: translate(-100%,0);
-	width: 250px;
-	/* overflow-x: hidden;
-	transition: 0.2s;
-	box-sizing: border-box;
-	width: 0;
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 9999; */
-}
-
-#menuShown:checked ~ #controls {
-	transform: none;
-}
-
-#controls.show {
-	width: 250px;
 }
 
 #chartSwapButton {
@@ -212,7 +202,7 @@ input[type="checkbox"] {
 
 /* Media queries */
 @media (max-width:1100px) {
-	#controls {
+	#sideBar {
 		width: 0;
 	}
 }

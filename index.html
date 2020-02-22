@@ -10,12 +10,10 @@
     <script src="./dist/bundle.js" type="module"></script>
 </head>
 <body>
-    <div id="hamburger">
-        <input type="checkbox" id="menuShown" checked>
-        <div class="menuStripe"></div>
-        <div class="menuStripe"></div>
-        <div class="menuStripe"></div>
-        <div id="controls">
+    <input type="checkbox" id="menuShown" checked>
+    <div id="container">
+        <label for="menuShown" id="menuToggle" title="Toggle Menu">&#9776;</label>
+        <div id="sideBar">
             <div>
                 <div id="chartSwap">
                     <button type="button" id="chartSwapButton" data-chart-type="map">Show Price vs Rating Chart</button>
@@ -57,11 +55,13 @@
                 </div>
             </div>
         </div>
+        <div id="content">
+            <div id="chartContainer">
+                <canvas id="mapChart" class="map"></canvas>
+            </div>
+            <div id="scotchInfoContainer"></div>
+        </div>
     </div>
-    <div id="chartContainer">
-        <canvas id="mapChart" class="map"></canvas>
-    </div>
-    <div id="scotchInfoContainer"></div>
     <template id="regionSelectorTemplate">
         <div class="checkbox-container">
             <input type="checkbox" class="regionFilters" checked>
