@@ -5,16 +5,41 @@ html, body {
 
 body {
 	display: grid;
-    grid-template-columns: 250px min-content auto;
+    grid-template-columns: min-content auto;
     grid-gap: 1rem;
     background-color: #f7f7f7;
     font-family: 'Barlow', sans-serif;
 }
 
+#hamburger {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	z-index: 9999;
+}
+
+#menuShown {
+	display: block;
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	width: 100%;
+	height: 100%;
+}
+
+.menuStripe {
+	width: 20px;
+	height: 3px;
+	background-color: #444;
+	margin-bottom: 4px;
+	border-radius: 1px;
+}
+
 #chartContainer {
-    width: 50vw;
-    position: relative;
-    margin-top: 3rem;
+	width: 50vw;
+	position: relative;
+	margin-top: 3rem;
+	margin-left: 4rem;
 }
 
 canvas.map {
@@ -23,7 +48,7 @@ canvas.map {
     background-size: cover;
 }
 
-#controls, #scotchInfoContainer {
+#controls > div, #scotchInfoContainer {
     padding: 1rem;
 }
 
@@ -31,6 +56,25 @@ canvas.map {
 	border-right: 1px solid #ccc;
 	box-shadow: 3px 0px 10px -6px #848484;
 	background-color: white;
+	height: 100%;
+	transform: translate(-100%,0);
+	width: 250px;
+	/* overflow-x: hidden;
+	transition: 0.2s;
+	box-sizing: border-box;
+	width: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999; */
+}
+
+#menuShown:checked ~ #controls {
+	transform: none;
+}
+
+#controls.show {
+	width: 250px;
 }
 
 #chartSwapButton {
@@ -164,4 +208,11 @@ input[type="checkbox"] {
 }
 .regionFilters#Islay + label::before {
 	background-color: #f7a35c;
+}
+
+/* Media queries */
+@media (max-width:1100px) {
+	#controls {
+		width: 0;
+	}
 }
