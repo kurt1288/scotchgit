@@ -15,7 +15,7 @@ html, body {
 	display: grid;
     grid-template-columns: min-content auto;
 	grid-gap: 1rem;
-	width: max-content;
+	width: 100%;
 	height: 100%;
 }
 
@@ -48,6 +48,10 @@ html, body {
 
 #menuShown:checked + #container #menuToggle, #menuShown:checked + #container #sideBar, #menuShown:checked + #container #content {
 	transform: translateX(250px);
+}
+
+#menuShown:checked + #container #content {
+	width: calc(100% - 250px);
 }
 
 #chartContainer {
