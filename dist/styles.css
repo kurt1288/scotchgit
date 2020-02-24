@@ -159,6 +159,12 @@ input[type="checkbox"] {
 	margin: 0;
 }
 
+#about {
+	font-size: 0.8rem;
+	position: absolute;
+	bottom: 1rem;
+}
+
 #scotchInfoName {
 	font-size: 2rem;
 	font-weight: normal;
