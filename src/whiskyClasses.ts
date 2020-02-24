@@ -11,7 +11,6 @@ class MapPosition {
 }
 
 class Whisky {
-    private Reviews: Array<Review>;
     private TotalRating: number;
     private TotalPrice: number;
     Name: string;
@@ -19,6 +18,7 @@ class Whisky {
     Region: string;
     Position: MapPosition;
     PriceVRatingPosition: MapPosition;
+    Reviews: Array<Review>;
     AveragePrice: number;
     AverageRating: number;
     

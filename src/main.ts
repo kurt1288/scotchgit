@@ -1,5 +1,4 @@
 import Papa from 'papaparse';
-import 'chartjs-plugin-datalabels';
 import WhiskysList from './whiskysList';
 import { Whisky, Review, MapPosition } from './whiskyClasses';
 import { DataSet, ChartType, Chart } from './chartClasses';
@@ -128,7 +127,6 @@ function ControlsInit() {
 function ChartInit() {
     const canvas = (document.getElementById("mapChart") as HTMLCanvasElement);
 
-    let labelHover = false;
     let datasets = new Array<DataSet>();
 
     for (const item of Regions) {

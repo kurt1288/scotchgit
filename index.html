@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Barlow&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
     <link rel="stylesheet" href="./dist/styles.css">
-    <script src="./dist/bundle.js" type="module"></script>
+    <link href="https://unpkg.com/tabulator-tables@4.5.3/dist/css/tabulator.min.css" rel="stylesheet">
 </head>
 <body>
     <input type="checkbox" id="menuShown" checked>
@@ -74,7 +74,11 @@
             <div id="scotchInfoRating">Average Rating<div></div></div>
             <div id="scotchInfoPrice">Average Price<div></div></div>
             <img src="" alt="" id="scotchInfoWordCloud">
+            <div id="scotchReviewsTable"></div>
         </div>
     </template>
+    <!-- moment is only required for date sorting in the reviews table -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+    <script src="./dist/bundle.js" type="module"></script>
 </body>
 </html>

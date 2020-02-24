@@ -1,4 +1,6 @@
 import * as ChartJS from 'chart.js';
+import 'chartjs-plugin-datalabels';
+import Tabulator from "tabulator-tables";
 import { Whisky, MapPosition } from "./whiskyClasses";
 
 enum ChartType {
@@ -158,6 +160,7 @@ class Chart {
 
         document.getElementById("scotchInfoContainer").innerHTML = "";
         document.getElementById("scotchInfoContainer").appendChild(element);
+        this.UpdateReviewsTable(data);
     }
 
     UpdateOptions() {
@@ -180,6 +183,39 @@ class Chart {
         this.ChartJS.options.tooltips.enabled = this.State === ChartType.Map ? false : true;
     
         this.ChartJS.update();
+    }
+
+    UpdateReviewsTable(data: Whisky) {
+        let formatDate = function(date: string) {
+            const dateTime = new Date(date);
+            const month = dateTime.toLocaleString('default', { month: 'long' });
+            const day = dateTime.toLocaleString('default', { day: 'numeric' });
+            const year = dateTime.toLocaleString('default', { year: 'numeric' });
+
+            return `${month} ${day}, ${year}`;
+        }
+
+        const table = new Tabulator("#scotchReviewsTable", {
+            height: 300,
+            data: data.Reviews,
+            layout: "fitColumns",
+            columns: [
+                {title: "Reviewer", field: "Reviewer"},
+                {title: "Date", field: "Date", mutator:formatDate, sorter: "date", sorterParams: {
+                    format: "MMMM DD, YYYY"
+                }},
+                {title: "Price", field: "Price"},
+                {title: "Rating", field: "Rating"},
+                {title: "Link", field: "ReviewLink", visible: false}
+            ],
+            initialSort: [
+                {column: "Date", dir: "desc"}
+            ],
+            rowClick: (e, row) => {
+                console.log(row.getData());
+                window.open(row.getData().ReviewLink, "_blank");
+            }
+        });
     }
 }
 
