@@ -185,7 +185,7 @@ class Chart {
         this.ChartJS.update();
     }
 
-    UpdateReviewsTable(data: Whisky) {
+    async UpdateReviewsTable(data: Whisky) {
         let formatDate = function(date: string) {
             const dateTime = new Date(date);
             const month = dateTime.toLocaleString('default', { month: 'long' });
@@ -212,7 +212,6 @@ class Chart {
                 {column: "Date", dir: "desc"}
             ],
             rowClick: (e, row) => {
-                console.log(row.getData());
                 window.open(row.getData().ReviewLink, "_blank");
             }
         });

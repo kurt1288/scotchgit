@@ -43,7 +43,7 @@ class Whisky {
 
     // rating is 'any' here because the incoming data isn't guaranteed to be a specific data type (unfortunately)
     private UpdateRating(rating:any) {
-        if (isNaN(rating))
+        if (isNaN(rating) || rating === " ")
             return;
 
         this.TotalRating += rating;
