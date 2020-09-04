@@ -9,7 +9,7 @@
   "dependencies": {
     "chart.js": "^2.9.3",
     "chartjs-plugin-datalabels": "^0.7.0",
-    "papaparse": "^5.1.1",
+    "papaparse": "^5.2.0",
     "tabulator-tables": "^4.5.3"
   },
   "devDependencies": {
