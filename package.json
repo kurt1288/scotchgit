@@ -7,7 +7,7 @@
     "buildProd": "npx webpack --config webpack.prod.js"
   },
   "dependencies": {
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "chartjs-plugin-datalabels": "^0.7.0",
     "papaparse": "^5.1.1",
     "tabulator-tables": "^4.5.3"
