@@ -16,10 +16,10 @@
     "@types/chart.js": "^2.9.14",
     "@types/papaparse": "^5.0.3",
     "@types/tabulator-tables": "^4.5.2",
-    "ts-loader": "^6.2.1",
+    "ts-loader": "^9.4.2",
     "typescript": "^3.7.5",
-    "webpack": "^4.41.6",
-    "webpack-cli": "^3.3.11",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
     "webpack-merge": "^4.2.2"
   }
 }
